@@ -11,9 +11,6 @@ ul {
   list-style: none;
 }
 
-/* li {
-  border: 1px solid #808080;
-} */
 
 a {
   text-decoration: none;
@@ -34,10 +31,8 @@ button {
 form {
   display: flex;
 
-margin: 0 auto;
-margin-bottom: 34px;
-
-/* position: fixed; */
+  margin: 0 auto;
+  margin-bottom: 34px;
 }
 
 .form-input {
@@ -47,14 +42,15 @@ padding-left: 16px;
 
 border-radius: 4px;
 border: 1px solid #808080;
+transition: border-color 250ms ease;
 }
 
 .form-input:hover {
-    border: 1px solid #000;
+    border-color: #000;
 }
 
-.form-input:-ms-keyboard-active {
-    border: 1px solid 4E75FF;
+.form-input:focus {
+    border-color: #4e75ff;
 }
 
 .form-input::placeholder {
@@ -63,11 +59,9 @@ border: 1px solid #808080;
 font-family: Montserrat;
 font-size: 16px;
 font-weight: 400;
-line-height: 1.5; /* 150% */
+line-height: 1.5;
 letter-spacing: 0.04em;
-
 }
-
 
 .button {
 display: block;
@@ -84,12 +78,13 @@ line-height: 1.5; /* 150% */
 letter-spacing: 0.04em;
 
 border-radius: 8px;
-background: #4E75FF;
+background-color: #4E75FF;
 border: none;
+transition: background-color 250ms ease;
 }
 
 .button:hover {
-background: #6C8CFF;
+background-color: #6C8CFF;
 }
 
 .gallery {
