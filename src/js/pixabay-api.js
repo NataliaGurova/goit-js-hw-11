@@ -2,6 +2,9 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
+import showGallery from "./render-functions"
+import { hideLoader } from "../main"
+
 
 const options = {
   captions: true,
@@ -26,7 +29,7 @@ export default function searchImages(userSearch) {
     .then((data) => {
       if (data.hits.length === 0) {
         hideLoader();
-        iziToast.show({
+        iziToast.error({
           position: 'topRight',
           color: 'red',
           message: `Sorry, there are no images matching<br>your search query. Please try again!`,

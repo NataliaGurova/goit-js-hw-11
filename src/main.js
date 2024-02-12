@@ -1,7 +1,5 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
 
 import searchImages from "./js/pixabay-api"
 import showGallery from "./js/render-functions"
@@ -12,8 +10,9 @@ const button = document.querySelector(".button");
 const gallery = document.querySelector(".gallery");
 const block = document.querySelector(".block");
 
-
+export { gallery };
 textInput.addEventListener("submit", handleSubmit);
+
 
 // Function to show the loader
 const showLoader = () => {
@@ -31,13 +30,17 @@ const hideLoader = () => {
   }
 };
 
+export { hideLoader };
+
+
 function handleSubmit(e) {
   e.preventDefault();
   const userSearch = textInput.elements.query.value.trim();
 
   if (userSearch === "") {
-    iziToast.show({
-        position: 'topRight',
+    iziToast.error({
+      position: 'topRight',
+      overlay: false,
         color: 'red', // blue, red, green, yellow
         message: "Sorry, there are no images matching<br>your search query. Please try again!",
       });

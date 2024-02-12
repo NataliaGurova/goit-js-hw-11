@@ -1,4 +1,6 @@
 
+import { gallery } from "../main"
+
 export default function showGallery(data) {
   const markup = data.hits
     .map((item) => {
